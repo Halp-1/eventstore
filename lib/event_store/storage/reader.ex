@@ -55,6 +55,7 @@ defmodule EventStore.Storage.Reader do
           event_type,
           correlation_id,
           causation_id,
+          enacted_by_id,
           data,
           metadata,
           created_at
@@ -67,6 +68,7 @@ defmodule EventStore.Storage.Reader do
         event_type: event_type,
         correlation_id: from_uuid(correlation_id),
         causation_id: from_uuid(causation_id),
+        enacted_by_id: enacted_by_id,
         data: data,
         metadata: metadata,
         created_at: from_timestamp(created_at)

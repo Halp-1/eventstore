@@ -179,6 +179,7 @@ defmodule EventStore.Streams.Stream do
       event_id: event_id,
       causation_id: causation_id,
       correlation_id: correlation_id,
+      enacted_by_id: enacted_by_id,
       event_type: event_type,
       data: data,
       metadata: metadata
@@ -188,6 +189,7 @@ defmodule EventStore.Streams.Stream do
       event_id: event_id || UUID.uuid4(),
       causation_id: causation_id,
       correlation_id: correlation_id,
+      enacted_by_id: enacted_by_id,
       event_type: event_type,
       data: serializer.serialize(data),
       metadata: serializer.serialize(metadata),

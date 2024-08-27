@@ -66,6 +66,7 @@ defmodule EventStore.Sql.Init do
         event_type text NOT NULL,
         causation_id uuid NULL,
         correlation_id uuid NULL,
+        enacted_by_id bigint NULL,
         data #{column_data_type} NOT NULL,
         metadata #{column_data_type} NULL,
         created_at timestamp with time zone DEFAULT NOW() NOT NULL
@@ -274,7 +275,7 @@ defmodule EventStore.Sql.Init do
   defp record_event_store_schema_version do
     """
     INSERT INTO schema_migrations (major_version, minor_version, patch_version)
-    VALUES (1, 3, 2);
+    VALUES (1, 4, 5);
     """
   end
 end

@@ -2,13 +2,13 @@ defmodule EventStore.Mixfile do
   use Mix.Project
 
   @source_url "https://github.com/commanded/eventstore"
-  @version "1.4.4"
+  @version "1.4.5"
 
   def project do
     [
       app: :eventstore,
       version: @version,
-      elixir: "~> 1.11",
+      elixir: "~> 1.17.2",
       elixirc_paths: elixirc_paths(Mix.env()),
       deps: deps(),
       description: description(),

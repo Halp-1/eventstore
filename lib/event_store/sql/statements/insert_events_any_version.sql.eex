@@ -15,7 +15,7 @@ WITH
     VALUES
     <%= for i <- 0..(number_of_events - 1) do %>
       <%= unless i == 0 do %>,<% end %>
-      ($<%= i*9+3 %>::uuid, $<%= i*9+10 %>::int, $<%= i*9+11 %>::bigint)
+      ($<%= i*10+3 %>::uuid, $<%= i*10+11 %>::int, $<%= i*10+12 %>::bigint)
     <% end %>
   ),
   events AS (
@@ -25,6 +25,7 @@ WITH
         event_type,
         causation_id,
         correlation_id,
+        enacted_by_id,
         data,
         metadata,
         created_at
@@ -32,7 +33,7 @@ WITH
     VALUES
     <%= for i <- 0..(number_of_events - 1) do %>
       <%= unless i == 0 do %>,<% end %>
-      ($<%= i*9+3 %>, $<%= i*9+4 %>, $<%= i*9+5 %>, $<%= i*9+6 %>, $<%= i*9+7 %>, $<%= i*9+8 %>, $<%= i*9+9 %>)
+      ($<%= i*10+3 %>, $<%= i*10+4 %>, $<%= i*10+5 %>, $<%= i*10+6 %>, $<%= i*10+7 %>, $<%= i*10+8 %>, $<%= i*10+9 %>, $<%= i*10+10 %>)
     <% end %>
   ),
   source_stream_events AS (
