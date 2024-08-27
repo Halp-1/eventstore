@@ -7,6 +7,7 @@ defmodule EventStore.EventData do
     :event_id,
     :correlation_id,
     :causation_id,
+    :enacted_by_id,
     :event_type,
     :data,
     :metadata
@@ -20,6 +21,7 @@ defmodule EventStore.EventData do
           event_id: uuid() | nil,
           correlation_id: uuid() | nil,
           causation_id: uuid() | nil,
+          enacted_by_id: integer() | nil,
           event_type: String.t(),
           data: term,
           metadata: term | nil
